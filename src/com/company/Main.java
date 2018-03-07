@@ -2,6 +2,8 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Map;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,19 +33,30 @@ public class Main {
         System.out.println(StringParsing.findStudents(students,"Shane"));
 
         //Crawling Friday
-        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            String input = console.readLine();
-            StringInput stringInput = new StringInput();
-            stringInput.friday(input.toCharArray());
-        } catch(IOException e) {}
+//        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+//        try {
+//            String input = console.readLine();
+//            StringInput stringInput = new StringInput();
+//            stringInput.friday(input.toCharArray());
+//        } catch(IOException e) {}
 
         //Leetspeak
         String st9 = "leet speak";
         String sixFlags = "Sign up for our park newsletter and we’ll let you know immediately if you’ve won two tickets to Six Flags!";
         System.out.println(StringTranslation.leetTranslate(sixFlags));
 
+        //Letter_histogram
+        Map<Character, Integer> tally = StringMapping.letter_histogram("hi");
+        System.out.println(tally.toString());
+        System.out.println();
 
-
+        //Caesar Cipher
+//        String cipher = "lbh zhfg hayrnea jung lbh unir yrnearq";
+//        System.out.println(StringTranslation.caesarDecrypt(cipher, 13));
+        String cipherTest = "What would you like for dinner";
+        System.out.println(cipherTest);
+        String decyptedTest = StringTranslation.caesarEncrypt(cipherTest, 10);
+        System.out.println(decyptedTest);
+        System.out.println(StringTranslation.caesarDecrypt(decyptedTest, 10));
     }
 }
