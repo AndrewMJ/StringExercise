@@ -2,6 +2,7 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Main {
@@ -39,7 +40,7 @@ public class Main {
 //            StringInput stringInput = new StringInput();
 //            stringInput.friday(input.toCharArray());
 //        } catch(IOException e) {}
-
+/*
         //Leetspeak
         String st9 = "leet speak";
         String sixFlags = "Sign up for our park newsletter and we’ll let you know immediately if you’ve won two tickets to Six Flags!";
@@ -58,5 +59,21 @@ public class Main {
         String decyptedTest = StringTranslation.caesarEncrypt(cipherTest, 10);
         System.out.println(decyptedTest);
         System.out.println(StringTranslation.caesarDecrypt(decyptedTest, 10));
+*/
+        //Positive Numbers
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            ArrayList<Integer> numArrays = new ArrayList<Integer>();
+            for(int i = 0; i < 7; i++) {
+                String num = reader.readLine();
+                numArrays.add(Integer.parseInt(num));
+            }
+            ArrayList<Integer> positiveNums = BasicCollections.positiveNumbers(numArrays);
+            for(int i = 0; i < positiveNums.size(); i++) {
+                System.out.print(positiveNums.get(i) + " ");
+            }
+
+        } catch(IOException e) {}
+
     }
 }
